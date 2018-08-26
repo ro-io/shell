@@ -14,4 +14,3 @@
 #                               |                          |
 #                               | .......entry starts..... |
 #        5.  Opens said text file in a text editor to finish the entry.
-#        6.  Maybe fucks with a vcs?  Or sets up a cron job idk.
