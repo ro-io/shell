@@ -1,2 +1,2 @@
-# Shell
+# shell
 A collection of shell scripts
