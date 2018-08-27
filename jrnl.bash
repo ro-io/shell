@@ -14,3 +14,12 @@
 #                               |                          |
 #                               | .......entry starts..... |
 #        5.  Opens said text file in a text editor to finish the entry.
+
+# To be used with date.sh
+# DATE="        %A %Y-%m-%d"
+# TIME="        %r"
+
+# Check if a journal directory exists, if not create one.
+if [ ! -e ~/.journal ]; then
+        mkdir ~/.journal
+fi
