@@ -19,7 +19,21 @@
 # DATE="        %A %Y-%m-%d"
 # TIME="        %r"
 
+journal=".journal"
+year=$(date +"%Y")
+month=$(date +"%m")
+
 # Check if a journal directory exists, if not create one.
-if [ ! -e ~/.journal ]; then
-        mkdir ~/.journal
+if [ ! -e ~/$journal ]; then
+        mkdir ~/$journal
+fi
+
+# Check for a current year directory, if not create one.
+if [ ! -e ~/$journal/$year ]; then
+        mkdir ~/$journal/$year
+fi
+
+# Check for a current month directory, if not create one.
+if [ ! -e ~/$journal/$year/$month ]; then
+        mkdir ~/$journal/$year/$month
 fi
