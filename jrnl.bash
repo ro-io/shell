@@ -9,19 +9,19 @@
 #          current date.
 #        4.  Populates said text file with a filled out template:
 #                               /--------------------------/
-#                               | date: Month XX, 20XX     |
-#                               | time: day/night          |
+#                               |       Month XX, 20XX     |
 #                               |                          |
 #                               | .......entry starts..... |
 #        5.  Opens said text file in a text editor to finish the entry.
 
-# To be used with date.sh
-# DATE="        %A %Y-%m-%d"
-# TIME="        %r"
-
+#Variables
 journal=".journal"
+
 year=$(date +"%Y")
 month=$(date +"%m")
+
+entry=$(date +"%Y-%m-%d")
+stamp="        $(date +"%A %Y-%m-%d at %r")"
 
 # Check if a journal directory exists, if not create one.
 if [ ! -e ~/$journal ]; then
@@ -37,3 +37,9 @@ fi
 if [ ! -e ~/$journal/$year/$month ]; then
         mkdir ~/$journal/$year/$month
 fi
+
+# Appends the current date and time to today's entry, creates said entry too.
+echo "$stamp" >> ~/$journal/$year/$month/$entry.txt
+
+# Opens the entry so it can be finished by the user.
+"${EDITOR:-vim}" ~/$journal/$year/$month/$entry.txt
