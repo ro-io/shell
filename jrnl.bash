@@ -24,17 +24,17 @@ entry=$(date +"%Y-%m-%d")
 stamp="        $(date +"%A %Y-%m-%d at %r")"
 
 # Check if a journal directory exists, if not create one.
-if [ ! -e ~/$journal ]; then
+if [ ! -d ~/$journal ]; then
         mkdir ~/$journal
 fi
 
 # Check for a current year directory, if not create one.
-if [ ! -e ~/$journal/$year ]; then
+if [ ! -d ~/$journal/$year ]; then
         mkdir ~/$journal/$year
 fi
 
 # Check for a current month directory, if not create one.
-if [ ! -e ~/$journal/$year/$month ]; then
+if [ ! -d ~/$journal/$year/$month ]; then
         mkdir ~/$journal/$year/$month
 fi
 
