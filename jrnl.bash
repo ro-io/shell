@@ -38,8 +38,14 @@ if [ ! -e ~/$journal/$year/$month ]; then
         mkdir ~/$journal/$year/$month
 fi
 
-# Appends the current date and time to today's entry, creates said entry too.
-echo "$stamp" >> ~/$journal/$year/$month/$entry.txt
+# Appends the current date and time to today's entry, or creates said entry.
+if [ -e  ~/$journal/$year/$month/$entry.txt ]; then
+        echo "" >> ~/$journal/$year/$month/$entry.txt
+        echo "" >> ~/$journal/$year/$month/$entry.txt
+        echo "$stamp" >> ~/$journal/$year/$month/$entry.txt
+else
+        echo "$stamp" > ~/$journal/$year/$month/$entry.txt
+fi
 
 # Opens the entry so it can be finished by the user.
 "${EDITOR:-vim}" ~/$journal/$year/$month/$entry.txt
