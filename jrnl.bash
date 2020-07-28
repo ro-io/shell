@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Author: Zachary Pigott (github.com/ro-io)
+# Author: Zachary Pigott (github.com/zpigott)
 # Disc:
 #        1.  Creates a directory if it doesn't exist to store files
 #        2.  Creates sub-directories if it doesn't exist based around
